@@ -55,7 +55,7 @@ services:
     - setup.kibana.host=kibana:5601
     networks: 
       - observability
-  
+
   apm:
     image: docker.elastic.co/apm/apm-server-oss:7.13.0
     container_name: apm

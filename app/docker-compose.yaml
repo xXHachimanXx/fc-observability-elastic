@@ -30,7 +30,7 @@ services:
     
     app:
       build: .
-      container_name: app_python
+      container_name: app
       command: python manage.py runserver 0.0.0.0:8000
       volumes:
         - .:/code
@@ -38,6 +38,14 @@ services:
         - "8000:8000"
       depends_on:
         - db
+      networks: 
+        - observability
+    
+    nginx:
+      build: ../nginx
+      container_name: nginx
+      ports:
+        - "8080:80"
       networks: 
         - observability
 
