@@ -40,14 +40,6 @@ services:
         - db
       networks: 
         - observability
-    
-    nginx:
-      build: ../nginx
-      container_name: nginx
-      ports:
-        - "8280:80"
-      networks: 
-        - observability
 
 networks:
   observability:
